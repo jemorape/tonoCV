@@ -2,407 +2,505 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Antonio Perez Leon – Dental CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonio Perez Leon | DDS</title>
 
-  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <style>
+    /* Estilos base rápidos para asegurar que los SVG se rendericen con el tamaño exacto del diseño */
+    .icon-svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .subsection-title .icon-svg {
+      width: 24px;
+      height: 24px;
+      color: #3b82f6;
+    }
+    .ce-icon-box .icon-svg {
+      width: 20px;
+      height: 20px;
+    }
+    .contact-icon-circle .icon-svg {
+      width: 20px;
+      height: 20px;
+    }
+    .date .icon-svg, .company .icon-svg {
+      margin-right: 6px;
+      color: #3b82f6;
+    }
+    .company .icon-svg {
+      color: #64748b;
+    }
+    
+    /* Clase para el fondo azul grisáceo en las tarjetas de Clinical Experience, Credentials y Scan Items */
+    .card-bg-alt,
+    .internal-grid .credential-card,
+    .scanning-list .scan-item {
+      background-color: #f1f5f9 !important; /* Color azul grisáceo tenue (Slate 100) */
+      border: 1px solid #e2e8f0 !important;
+    }
 
-  <link rel="stylesheet" href="css/cv.css">
+    /* Corrección de contraste para las etiquetas/chips dentro de Clinical Experience */
+    .card-bg-alt .chips span {
+      background-color: #ffffff !important; /* Fondo blanco para contrastar con el gris de la tarjeta */
+      color: #1e293b !important;            /* Texto gris oscuro/azulino de alta visibilidad */
+      border: 1px solid #cbd5e1 !important;  /* Borde sutil que define el contorno */
+    }
+
+    /* Estilos para los enlaces interactivos de contacto */
+    a.contact-info-card {
+      text-decoration: none !important;      /* Evita el subrayado por defecto */
+      color: inherit !important;             /* Mantiene el color de texto original de la tarjeta */
+      display: flex;                         /* Mantiene la alineación original del contenedor */
+      transition: opacity 0.2s ease;
+    }
+    
+    a.contact-info-card:hover {
+      opacity: 0.85;                         /* Efecto visual sutil al pasar el mouse/hacer focus */
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- =========================================================
-       HEADER
-  ========================================================== -->
-
-  <header class="header">
-
-    <h1 class="main-name">
-      ANTONIO PEREZ LEON
-    </h1>
-
-    <h2 class="degree">
-      DDS
-    </h2>
-
-    <div class="divider"></div>
-
-    <p class="contact">
-      ☎ +1 (562)-329-8061 |
-      ✉ antonio_pl2@outlook.com |
-      📍 Norwalk, CA
-    </p>
-
+  <header class="navbar">
+    <div class="logo">Antonio Perez</div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Home</a>
+      <a href="#career">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#credentials">Licenses</a>
+      <a href="#ce-courses">CE Courses</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <!-- =========================================================
-       EDUCATION
-  ========================================================== -->
 
-  <section class="section">
-
-    <h2 class="section-title">
-      EDUCATION
-    </h2>
-
-    <div class="education-item">
-
-      <p>
-        <strong>Doctor of Dental Surgery, DDS</strong> |
-        UMSNH | Morelia, Mexico
-      </p>
-
-      <p class="subtext">
-        August 2010 – July 2015 | GPA: 3.48
-      </p>
-
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag-container">
+        <div class="hero-tag">DOCTOR OF DENTAL SURGERY</div>
+      </div>
+      <h1>Antonio<br>Perez Leon</h1>
+      <div class="hero-info-horizontal">
+        <span>Norwalk, CA</span>
+        <span>+1 (562) 329-8061</span>
+        <span>antonio_pl2@outlook.com</span>
+      </div>
+      <a href="#career" class="scroll-down">↓</a>
     </div>
-
-    <div class="education-item">
-
-      <p>
-        <strong>OMSF Internship</strong> |
-        ISSSTE Hospital | Morelia, Mexico
-      </p>
-
-      <p class="subtext">
-        August 2015 – July 2016
-      </p>
-
-    </div>
-
   </section>
 
-  <!-- =========================================================
-       CLINICAL EXPERIENCE
-  ========================================================== -->
+  <div class="section-wrapper" id="career">
+    <div class="section-content">
+      <div class="section-mini-title">CAREER</div>
+      <h2 class="section-title">Clinical Experience</h2>
 
-  <section class="section">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card card-bg-alt">
+            <div class="date">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2h-2v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+              March 2020 — Present
+            </div>
+            <h3>RDA-OMSA</h3>
+            <p class="company">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Simply Dentistry | Tustin, CA
+            </p>
+            <p class="company-extra">Family Dentistry, Miguel Choy | Long Beach, CA</p>
+            
+            <ul class="job-description">
+              <li>Manage patient flow and clinical operations while assisting dentists in restorative, crowns, dentures, implants, and oral surgery procedures.</li>
+              <li>Fabricate and cement temporaries, adjust dentures, perform soft relines, start and monitor Invisalign treatments, and perform teeth whitening procedures.</li>
+              <li>Coordinate back-office operations by delegating tasks and supporting sterilization and inventory management to maintain order and operatory efficiency.</li>
+              <li>Perform digital scanning and radiographs to support diagnosis and treatment planning.</li>
+              <li>Train new dental assistants on clinical protocols, patient care, and workflow efficiency.</li>
+            </ul>
 
-    <h2 class="section-title">
-      CLINICAL EXPERIENCE
-    </h2>
-
-    <!-- JOB -->
-    <div class="job">
-
-      <div class="job-top">
-
-        <div class="job-left">
-
-          <div class="job-title">
-            RDA-OMSA |
+            <div class="chips">
+              <span>Invisalign</span>
+              <span>Digital Scanning</span>
+              <span>Radiographs</span>
+              <span>Oral Surgery</span>
+              <span>Implants</span>
+              <span>Crowns</span>
+            </div>
           </div>
-
-          <div class="job-company">
-            Simply Dentistry | Tustin, CA
-            <br>
-            Family Dentistry, Miguel Choy | Long Beach, CA
-          </div>
-
         </div>
 
-        <div class="job-date">
-          March 2020 – Present
-        </div>
-
-      </div>
-
-      <ul class="details">
-
-        <li>
-          Manage patient flow and clinical operations while assisting dentists in restorative,
-          crowns, dentures, implants, and oral surgery procedures.
-        </li>
-
-        <li>
-          Fabricate and cement temporaries, adjust dentures, perform soft relines,
-          start and monitor Invisalign treatments, and perform teeth whitening procedures.
-        </li>
-
-        <li>
-          Coordinate back-office operations by delegating tasks and supporting sterilization
-          and inventory management to maintain order and operatory efficiency.
-        </li>
-
-        <li>
-          Perform digital scanning and radiographs to support diagnosis and treatment planning.
-        </li>
-
-        <li>
-          Train new dental assistants on clinical protocols, patient care,
-          and workflow efficiency.
-        </li>
-
-      </ul>
-
-    </div>
-
-    <!-- JOB -->
-    <div class="job">
-
-      <div class="job-top">
-
-        <div class="job-left">
-
-          <div class="job-title">
-            General Dentist |
-            <span class="location">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card card-bg-alt">
+            <div class="date">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2h-2v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+              January 2017 — June 2017
+            </div>
+            <h3>General Dentist</h3>
+            <p class="company">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               Morelia, Mexico
-            </span>
+            </p>
+            
+            <ul class="job-description">
+              <li>Clinical diagnosis, dental restorations, dental surgery (Wisdom teeth removal), fixed, complete and removable prosthodontics procedures.</li>
+              <li>Assisted in implant placements and referred patients to specialized healthcare providers when necessary.</li>
+            </ul>
+
+            <div class="chips">
+              <span>Prosthodontics</span>
+              <span>Dental Surgery</span>
+              <span>Implants</span>
+              <span>Restorations</span>
+            </div>
           </div>
-
         </div>
 
-        <div class="job-date">
-          January 2017 – June 2017
-        </div>
-
-      </div>
-
-      <ul class="details">
-
-        <li>
-          Clinical diagnosis, dental restorations, dental surgery (Wisdom teeth removal),
-          fixed, complete and removable prosthodontics procedures.
-          Assisted in implant placements and referred patients to specialized
-          healthcare providers when necessary.
-        </li>
-
-      </ul>
-
-    </div>
-
-    <!-- JOB -->
-    <div class="job">
-
-      <div class="job-top">
-
-        <div class="job-left">
-
-          <div class="job-title">
-            Student Dentist |
-            <span class="location">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card card-bg-alt">
+            <div class="date">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2h-2v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+              August 2013 — July 2015
+            </div>
+            <h3>Student Dentist</h3>
+            <p class="company">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               UMSNH | Morelia, Mexico
-            </span>
+            </p>
+            
+            <ul class="job-description">
+              <li>Performed diagnoses, endodontic treatments, restorations, extractions, fixed and removable prosthodontics procedures, pediatric dental care, and periodontal care.</li>
+            </ul>
+
+            <div class="chips">
+              <span>Endodontics</span>
+              <span>Extractions</span>
+              <span>Periodontics</span>
+              <span>Pediatric Dentistry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-wrapper" id="education">
+    <div class="section-content">
+      <div class="section-mini-title">BACKGROUND</div>
+      <h2 class="section-title">Education & Community</h2>
+
+      <div class="grid-two-columns">
+        <div class="column-left">
+          <h3 class="subsection-title">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.18 13.04l-1.34.73L12 19l8.16-4.46-1.33-.73L12 16.71l-6.82-3.67z"/></svg>
+            Academic Training
+          </h3>
+          <div class="card">
+            <div class="date">August 2010 — July 2015</div>
+            <h3>Doctor of Dental Surgery (DDS)</h3>
+            <p>UMSNH | Morelia, Mexico</p>
+            <strong class="gpa">GPA: 3.48</strong>
+          </div>
+          <div class="card">
+            <div class="date">August 2015 — July 2016</div>
+            <h3>OMSF Internship</h3>
+            <p>ISSSTE Hospital | Morelia, Mexico</p>
+          </div>
+        </div>
+
+        <div class="column-right">
+          <h3 class="subsection-title">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            Community Services
+          </h3>
+          <div class="card community-card">
+            <div class="community-header">
+              <h3>Colgate Bright Smiles</h3>
+              <div class="hours">6 hours</div>
+            </div>
+            <p>Azusa, CA | April 2026</p>
+          </div>
+          <div class="card community-card">
+            <div class="community-header">
+              <h3>Healing California</h3>
+              <div class="hours">5 hours</div>
+            </div>
+            <p>Long Beach, CA | September 2025</p>
+          </div>
+          <div class="card community-card">
+            <div class="community-header">
+              <h3>Second Harvest Food Bank</h3>
+              <div class="hours">25 hours</div>
+            </div>
+            <p>Irvine, CA | Aug–Dec 2025</p>
+          </div>
+          <div class="card community-card">
+            <div class="community-header">
+              <h3>Ed's Dental Laboratory</h3>
+              <div class="hours">60 hours</div>
+            </div>
+            <p>Anaheim, CA | Feb–Sep 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-wrapper" id="credentials">
+    <div class="section-content">
+      <div class="section-mini-title">CREDENTIALS</div>
+      <h2 class="section-title">Licenses & Skills</h2>
+
+      <div class="grid-two-columns">
+        <div class="column-left">
+          <h3 class="subsection-title">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            Dental Licenses & Certificates
+          </h3>
+          <div class="internal-grid">
+            <div class="card credential-card">
+              <h3>RDA License</h3>
+              <p class="sub-text">LN: 102011</p>
+              <p class="exp-date">EXP: January 2028</p>
+            </div>
+            <div class="card credential-card">
+              <h3>OMSA Certificate</h3>
+              <p class="exp-date">EXP: August 2027</p>
+            </div>
+            <div class="card credential-card">
+              <h3>California Dental Radiation Safety</h3>
+              <p class="exp-date">June 2023</p>
+            </div>
+            <div class="card credential-card">
+              <h3>Coronal Polishing</h3>
+              <p class="exp-date">May 2023</p>
+            </div>
+            <div class="card credential-card">
+              <h3>Infection Control</h3>
+              <p class="exp-date">May 2023</p>
+            </div>
+            <div class="card credential-card">
+              <h3>Basic Life Support</h3>
+              <p class="exp-date">EXP: July 2027</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column-right">
+          <h3 class="subsection-title">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+            Digital Scanning
+          </h3>
+          <div class="scanning-list">
+            <div class="scan-item">iTero Scan</div>
+            <div class="scan-item">3Shape Trios Scan</div>
+            <div class="scan-item">Cerec Scan</div>
           </div>
 
+          <h3 class="subsection-title languages-top-margin">Languages</h3>
+          <div class="languages-container">
+            <div class="language-row">
+              <div class="lang-labels">
+                <span class="lang-name">Spanish</span>
+                <span class="lang-level">Native</span>
+              </div>
+              <div class="progress-bar"><div class="bar-fill full"></div></div>
+            </div>
+            <div class="language-row">
+              <div class="lang-labels">
+                <span class="lang-name">English</span>
+                <span class="lang-level">Fluent B2–C1</span>
+              </div>
+              <div class="progress-bar"><div class="bar-fill fluent"></div></div>
+            </div>
+          </div>
         </div>
-
-        <div class="job-date">
-          August 2013 – July 2015
-        </div>
-
       </div>
-
-      <ul class="details">
-
-        <li>
-          Performed diagnoses, endodontic treatments, restorations, extractions,
-          fixed and removable prosthodontic procedures,
-          pediatric dental care, and periodontal care.
-        </li>
-
-      </ul>
-
     </div>
+  </div>
 
-  </section>
+  <div class="section-wrapper" id="ce-courses">
+    <div class="section-content">
+      <div class="section-mini-title">LEARNING</div>
+      <h2 class="section-title ce-main-title">CE Courses</h2>
+      <div class="ce-subtitle"><strong>73</strong> total continuing education hours</div>
 
-  <!-- =========================================================
-       COMMUNITY
-  ========================================================== -->
+      <div class="ce-grid">
+        <div class="card ce-card">
+          <div class="ce-card-top">
+            <div class="ce-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <div class="ce-info">
+              <h3>California Dental Association</h3>
+              <p>Anaheim, CA</p>
+            </div>
+          </div>
+          <div class="ce-card-bottom">
+            <span class="ce-date">May 2026</span>
+            <span class="ce-badge">10 CE</span>
+          </div>
+        </div>
+        <div class="card ce-card">
+          <div class="ce-card-top">
+            <div class="ce-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <div class="ce-info">
+              <h3>Endodontic Symposium</h3>
+              <p>Loma Linda University</p>
+            </div>
+          </div>
+          <div class="ce-card-bottom">
+            <span class="ce-date">November 2025</span>
+            <span class="ce-badge">7 CE</span>
+          </div>
+        </div>
+        <div class="card ce-card">
+          <div class="ce-card-top">
+            <div class="ce-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <div class="ce-info">
+              <h3>Increasing Success with All-On-4/X Patients</h3>
+              <p>Anaheim, CA</p>
+            </div>
+          </div>
+          <div class="ce-card-bottom">
+            <span class="ce-date">August 2025</span>
+            <span class="ce-badge">3 CE</span>
+          </div>
+        </div>
+        <div class="card ce-card">
+          <div class="ce-card-top">
+            <div class="ce-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <div class="ce-info">
+              <h3>California Dental Association</h3>
+              <p>Anaheim, CA</p>
+            </div>
+          </div>
+          <div class="ce-card-bottom">
+            <span class="ce-date">May 2025</span>
+            <span class="ce-badge">10 CE</span>
+          </div>
+        </div>
+        <div class="card ce-card">
+          <div class="ce-card-top">
+            <div class="ce-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <div class="ce-info">
+              <h3>Infection Control in Dental Settings</h3>
+              <p>Dental CE Academy</p>
+            </div>
+          </div>
+          <div class="ce-card-bottom">
+            <span class="ce-date">February 2025</span>
+            <span class="ce-badge">3 CE</span>
+          </div>
+        </div>
+        <div class="card ce-card">
+          <div class="ce-card-top">
+            <div class="ce-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            </div>
+            <div class="ce-info">
+              <h3>Multiple Online Courses</h3>
+              <p>P&G – Crest + Oral B</p>
+            </div>
+          </div>
+          <div class="ce-card-bottom">
+            <span class="ce-date">Jan–Jul 2025</span>
+            <span class="ce-badge">40 CE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <section class="section">
+  <div class="section-wrapper" id="contact">
+    <div class="section-content">
+      <div class="section-mini-title">REACH OUT</div>
+      <h2 class="section-title contact-main-title">Contact</h2>
 
-    <h2 class="section-title">
-      COMMUNITY SERVICES
-    </h2>
+      <div class="grid-two-columns contact-layout">
+        <div class="contact-cards-container">
+          
+          <a href="tel:+15623298061" class="card contact-info-card">
+            <div class="contact-icon-circle">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="contact-data">
+              <span class="contact-label">PHONE</span>
+              <span class="contact-value">+1 (562) 329-8061</span>
+            </div>
+          </a>
 
-    <ul class="details">
+          <a href="mailto:antonio_pl2@outlook.com" class="card contact-info-card">
+            <div class="contact-icon-circle">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="contact-data">
+              <span class="contact-label">EMAIL</span>
+              <span class="contact-value">antonio_pl2@outlook.com</span>
+            </div>
+          </a>
 
-      <li>
-        <strong>Colgate Bright Smiles</strong> |
-        Azusa, CA | Volunteer | 6 hrs (April 2026)
-      </li>
+          <div class="card contact-info-card">
+            <div class="contact-icon-circle">
+              <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="contact-data">
+              <span class="contact-label">LOCATION</span>
+              <span class="contact-value">Norwalk, CA</span>
+            </div>
+          </div>
+        </div>
 
-      <li>
-        <strong>Healing California</strong> |
-        Long Beach, CA | Volunteer | 5 hrs (September 2025)
-      </li>
+        <div class="interests-container">
+          <h3 class="subsection-title">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Personal Interests
+          </h3>
+          <div class="interests-chips">
+            <span>Live Sports Events</span>
+            <span>Hiking</span>
+            <span>Tennis</span>
+            <span>Running</span>
+            <span>Restaurants</span>
+            <span>Diverse Cuisines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <li>
-        <strong>Second Harvest Food Bank</strong> |
-        Irvine, CA | Volunteer | 25 hrs (Aug-Dec 2025)
-      </li>
+  <footer class="main-footer">
+    <p>&copy; 2026 Antonio Perez Leon, DDS &mdash; All rights reserved.</p>
+  </footer>
 
-      <li>
-        <strong>Ed’s Dental Laboratory</strong> |
-        Anaheim, CA | Volunteer | 60 hrs (Feb-Sep 2025)
-      </li>
-
-    </ul>
-
-  </section>
-
-  <!-- =========================================================
-       LICENSES
-  ========================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      DENTAL LICENSES | CERTIFICATES
-    </h2>
-
-    <ul class="details">
-
-      <li>
-        <strong>RDA License</strong> |
-        LN: 102011 | Exp: January 2028
-      </li>
-
-      <li>
-        <strong>OMSA Certificate</strong> |
-        Exp: August 2027
-      </li>
-
-      <li>
-        <strong>California Dental Radiation Safety</strong> |
-        June 2023
-      </li>
-
-      <li>
-        <strong>Coronal Polishing</strong> |
-        May 2023
-      </li>
-
-      <li>
-        <strong>Infection Control</strong> |
-        May 2023
-      </li>
-
-      <li>
-        <strong>Basic Life Support</strong> |
-        Exp: July 2027
-      </li>
-
-    </ul>
-
-  </section>
-
-  <!-- =========================================================
-       CE COURSES
-  ========================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      CE COURSES
-    </h2>
-
-    <ul class="details">
-
-      <li>
-        <strong>California Dental Association</strong> |
-        Anaheim, CA | May 2026 | 10 CE
-      </li>
-
-      <li>
-        <strong>Endodontic Symposium</strong> |
-        Loma Linda University | November 2025 | 7 CE
-      </li>
-
-      <li>
-        <strong>Increasing success with All-On-4/X patients</strong> |
-        Anaheim, CA | August 2025 | 3 CE
-      </li>
-
-      <li>
-        <strong>California Dental Association</strong> |
-        Anaheim, CA | May 2025 | 10 CE
-      </li>
-
-      <li>
-        <strong>Infection Control in Dental Settings</strong> |
-        Dental CE Academy | February 2025 | 3 CE
-      </li>
-
-      <li>
-        <strong>Multiple Online Courses</strong> |
-        P&G - Crest + Oral B | January 2025-July 2025 | 40 CE
-      </li>
-
-    </ul>
-
-  </section>
-
-  <!-- =========================================================
-       LANGUAGE SKILLS
-  ========================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      LANGUAGE SKILLS
-    </h2>
-
-    <ul class="details">
-
-      <li>
-        Spanish | Native
-      </li>
-
-      <li>
-        English | Fluent B2-C1
-      </li>
-
-    </ul>
-
-  </section>
-
-  <!-- =========================================================
-       DIGITAL SCANNING SKILLS
-  ========================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      DIGITAL SCANNING SKILLS
-    </h2>
-
-   <ul class="details">
-
-      <li>iTero Scan</li>
-
-      <li>3Shape Trios Scan</li>
-
-      <li>Cerec Scan</li>
-
-    </ul>
-
-  </section>
-
-  <!-- =========================================================
-       PERSONAL INTERESTS
-  ========================================================== -->
-
-  <section class="section">
-
-    <h2 class="section-title">
-      PERSONAL INTERESTS
-    </h2>
-    <ul class="details">
-      <li>
-        Attend live sports events, hike, play tennis, run, visit new restaurants, and explore diverse cuisines.
-      </li>
-    </ul>
-
-  </section>
-
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if(menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
 </body>
 </html>
